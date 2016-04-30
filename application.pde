@@ -8,8 +8,6 @@ void setup()
   terminalVelocity = 40;
 }
 
-
-
 void draw()
 {
   
@@ -44,7 +42,8 @@ class Ball
   }
 }
 
-void mousePressed()
+void touchStart(TouchEvent touchEvent)
 {
-  balls.add(new Ball(mouseX,mouseY));
+  int newX = touchEvent.touches[i].offsetX; int newY = touchEvent.touches[i].offsetY;
+  balls.add(new Ball(newX,newY));
 }
